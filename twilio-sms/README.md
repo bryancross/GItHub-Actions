@@ -19,4 +19,4 @@ The following parameters are used to configure the action:
 
 An SMS message with information about the merge, and a link to the relevant Pull Request:
 
-![Example SMS][https://github.com/bryancross/actions/twilio-sms/assets/exampleSMS.png]
+![Example SMS][https://github.com/bryancross/GitHub-Actions/blob/master/twilio-sms/assets/exampleSMS.png]
