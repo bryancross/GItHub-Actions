@@ -12,8 +12,8 @@ if (!(process.env.TWILIO_ACCT_SID && process.env.TWILIO_ACCT_TOKEN && process.en
     console.log("FROM_NUMBER\t\t: Twilio phone number from which the SMS will be sent.");
     console.log("The following two environment variables are OPTIONAL")
     console.log("DEBUG\t\t: If present (set to any value), print variable values to the console");
-    console.log("FAIL_ON_EXIT\t\t: If present (set to any value), fail on any error.  Otherwise, exit with neutral return value");
-    process.exit(process.env.FAIL_ON_EXIT ? -1 : 78);
+    console.log("FAIL_ON_ERROR\t\t: If present (set to any value), fail on any error.  Otherwise, exit with neutral return value");
+    process.exit(process.env.FAIL_ON_ERROR ? -1 : 78);
 };
 
 
@@ -45,7 +45,7 @@ try
 catch (e)
 {
     console.log("ERROR processing event data: " + e.msg);
-    process.exit(process.env.FAIL_ON_EXIT ? err.code : 78);
+    process.exit(process.env.FAIL_ON_ERROR ? err.code : 78);
 }
 
 
@@ -80,5 +80,5 @@ client.messages
     .catch(err =>
     {
         console.log("ERROR: " + err.code + err.message);
-        process.exit(process.env.FAIL_ON_EXIT ? err.code : 78);
+        process.exit(process.env.FAIL_ON_ERROR ? err.code : 78);
     });
